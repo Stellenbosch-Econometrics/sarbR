@@ -59,17 +59,125 @@
       
       </header><div class="row">
   <div class="contents col-md-9">
+
 <div id="sarbr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#sarbr" class="anchor"></a>sarbR</h1></div>
-<p>The goal of sarbR is to …</p>
-<div id="example" class="section level2">
+<p>The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release.</p>
+<p>At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s <code>sarbR</code> package aims to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple <code>sarb_code</code> function.</p>
+<div id="disclaimer" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to solve a common problem:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## basic example code</code></pre></div>
+<a href="#disclaimer" class="anchor"></a>Disclaimer</h2>
+<p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API. Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p>
 </div>
 </div>
+<div id="flow-of-the-package" class="section level1">
+<h1 class="hasAnchor">
+<a href="#flow-of-the-package" class="anchor"></a>Flow of the package</h1>
+<p>The package is built around the main <code>sarb_code</code> function, with two helper functions. The first providing a way to search for an indicator and its meta information: <code>search_indicator</code>. The second function is to request an access token for the API: <code>token_request</code>.</p>
+<div id="getting-a-request-token" class="section level3">
+<h3 class="hasAnchor">
+<a href="#getting-a-request-token" class="anchor"></a>Getting a request token</h3>
+<p>Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct (to a certain degree - the security setup isn’t fort knox), it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analystics on request and hopefuly allows the small server to handle everyones request in an orderly manner.</p>
+<p>Once a token has been registered it is allowed to conduct 200 requests a day with a 1 second sleep between requests. This restriction will likely be lifted once workload is established.</p>
+<p>To request a token from the service follow 2 simple steps:</p>
+<ul>
+<li>Step 1: request a token</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
+<span class="kw"><a href="reference/token_request.html">token_request</a></span>()
+
+<span class="co">#&gt; Successful token creation</span>
+<span class="co">#&gt; $status</span>
+<span class="co">#&gt; [1] 200</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $msg</span>
+<span class="co">#&gt; [1] "Successful token creation"</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $info</span>
+<span class="co">#&gt;           address                            token</span>
+<span class="co">#&gt; 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364</span></code></pre></div>
+<ul>
+<li>Step 2: add token to environment or options in your <code>.Rprofile</code>
+</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "hashhashhash"</span>)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.setenv">Sys.setenv</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "hashhashhash"</span>)</code></pre></div>
+<p>This way you will not need to send the token along when making a request for data</p>
+</div>
+<div id="searching-code" class="section level2">
+<h2 class="hasAnchor">
+<a href="#searching-code" class="anchor"></a>Searching code</h2>
+<p>The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking.</p>
+<p>To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the <code>search_indicator</code> function</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Using the description
+
+<span class="kw"><a href="reference/search_indicator.html">search_indicator</a></span>(<span class="dt">description =</span> <span class="st">"Expenditure"</span>)
+<span class="co">#&gt; # A tibble: 6 x 7</span>
+<span class="co">#&gt;   time_series description_and_vers… series version_description      frequency unit_of_measure code  </span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;S3: glue&gt;            &lt;chr&gt;  &lt;chr&gt;                    &lt;chr&gt;     &lt;chr&gt;           &lt;S3: &gt;</span>
+<span class="co">#&gt; 1 KBP6045     Expenditure on gross… C      Constant 2010 prices     K1        RMILL           KBP60…</span>
+<span class="co">#&gt; 2 KBP6045     Expenditure on gross… D      Constant 2010 prices. S… K1        RMILL           KBP60…</span>
+<span class="co">#&gt; 3 KBP6045     Expenditure on gross… J      Current prices           J1        RMILL           KBP60…</span>
+<span class="co">#&gt; 4 KBP6045     Expenditure on gross… K      Current prices           K1        RMILL           KBP60…</span>
+<span class="co">#&gt; 5 KBP6045     Expenditure on gross… L      Current prices. Seasona… K1        RMILL           KBP60…</span>
+<span class="co">#&gt; 6 KBP6045     Expenditure on gross… Y      Constant 2010 prices     J1        RMILL           KBP60…</span>
+
+## Using the code
+
+<span class="kw"><a href="reference/search_indicator.html">search_indicator</a></span>(<span class="dt">time_series_code =</span> <span class="st">"KBP1000"</span>)
+
+<span class="co">#&gt; # A tibble: 2 x 7</span>
+<span class="co">#&gt;   time_series description_and_version        series version_descript… frequency unit_of_measure code  </span>
+<span class="co">#&gt;   &lt;chr&gt;       &lt;S3: glue&gt;                     &lt;chr&gt;  &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;           &lt;S3: &gt;</span>
+<span class="co">#&gt; 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…</span>
+<span class="co">#&gt; 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…</span></code></pre></div>
+</div>
+</div>
+<div id="development-guidelines" class="section level1">
+<h1 class="hasAnchor">
+<a href="#development-guidelines" class="anchor"></a>Development guidelines</h1>
+<p>Use of packages:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(devtools)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(usethis)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(pkgdown)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(testthat)</code></pre></div>
+<p>Maybe add some nice message colors with</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(crayon)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">red</a></span>(<span class="st">"This is red"</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
+<span class="co">#&gt; This is red</span>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">blue</a></span>(<span class="st">"This is blue</span><span class="ch">\n</span><span class="st">"</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
+<span class="co">#&gt; This is blue</span>
+<span class="co">#&gt; </span>
+
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/message">message</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">green</a></span>(<span class="st">"This is green"</span>))
+<span class="co">#&gt; This is green</span>
+
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/warning">warning</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">bold</a></span>(<span class="st">"This is bold"</span>))
+<span class="co">#&gt; Warning: This is bold</span>
+Some text
+
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/stop">stop</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">italic</a></span>(<span class="st">"This is italic"</span>))</code></pre></div>
+<p>For version control I am using <code>git flow</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> flow init
+
+<span class="fu">git</span> flow feature start [name]
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit -m
+<span class="fu">git</span> flow feature finish  [name]
+
+<span class="fu">git</span> flow hotfix start [name]
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit -m
+<span class="fu">git</span> flow hotfix finish  [name]
+
+<span class="co"># Push to master</span>
+<span class="fu">git</span> flow release start [name]
+<span class="fu">git</span> add .
+<span class="fu">git</span> commit -m
+<span class="fu">git</span> flow release finish [name]</code></pre></div>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

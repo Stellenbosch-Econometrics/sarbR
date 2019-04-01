@@ -106,7 +106,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>search_indicator</span>(<span class='no'>description</span>, <span class='no'>code</span>)</pre>
+    <pre class="usage"><span class='fu'>search_indicator</span>(<span class='no'>description</span>, <span class='no'>time_series_code</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,25 +129,25 @@
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='fu'>search_indicator</span>(<span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"GDP"</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 101 x 7</span><span>
-#&gt;    time_series_num… description_and… series_code version_descrip… frequency
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> KBP4116          Total loan debt… F           </span><span style='color: #BB0000;'>NA</span><span>               J2       
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> KBP4116          Total loan debt… J           </span><span style='color: #BB0000;'>NA</span><span>               J1       
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> KBP4116          Total loan debt… K           </span><span style='color: #BB0000;'>NA</span><span>               K1       
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> KBP4117          Total loan debt… F           </span><span style='color: #BB0000;'>NA</span><span>               J2       
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> KBP4117          Total loan debt… J           </span><span style='color: #BB0000;'>NA</span><span>               J1       
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> KBP4117          Total loan debt… K           </span><span style='color: #BB0000;'>NA</span><span>               K1       
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> KBP4419          Primary balance… F           </span><span style='color: #BB0000;'>NA</span><span>               J2       
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> KBP4419          Primary balance… J           </span><span style='color: #BB0000;'>NA</span><span>               J1       
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> KBP4419          Primary balance… K           </span><span style='color: #BB0000;'>NA</span><span>               K1       
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> KBP4420          National govern… F           </span><span style='color: #BB0000;'>NA</span><span>               J2       
-#&gt; </span><span style='color: #949494;'># … with 91 more rows, and 2 more variables: unit_of_measure </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>,
-#&gt; #   full_ind_number </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span></div><div class='input'><span class='fu'>search_indicator</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP1000"</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 2 x 7</span><span>
-#&gt;   time_series_num… description_and… series_code version_descrip… frequency
-#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
-#&gt; </span><span style='color: #BCBCBC;'>1</span><span> KBP1000          South African R… J           </span><span style='color: #BB0000;'>NA</span><span>               J1       
-#&gt; </span><span style='color: #BCBCBC;'>2</span><span> KBP1000          South African R… M           </span><span style='color: #BB0000;'>NA</span><span>               M1       
-#&gt; </span><span style='color: #949494;'># … with 2 more variables: unit_of_measure </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, full_ind_number </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span></div></span></pre>
+#&gt;    time_series description_and… series version_descrip… frequency
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> KBP4116     Total loan debt… F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> KBP4116     Total loan debt… J      </span><span style='color: #BB0000;'>NA</span><span>               J1       
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> KBP4116     Total loan debt… K      </span><span style='color: #BB0000;'>NA</span><span>               K1       
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> KBP4117     Total loan debt… F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> KBP4117     Total loan debt… J      </span><span style='color: #BB0000;'>NA</span><span>               J1       
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> KBP4117     Total loan debt… K      </span><span style='color: #BB0000;'>NA</span><span>               K1       
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> KBP4419     Primary balance… F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> KBP4419     Primary balance… J      </span><span style='color: #BB0000;'>NA</span><span>               J1       
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> KBP4419     Primary balance… K      </span><span style='color: #BB0000;'>NA</span><span>               K1       
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> KBP4420     National govern… F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
+#&gt; </span><span style='color: #949494;'># … with 91 more rows, and 2 more variables: unit_of_measure </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span style='color: #949494;'>, code </span><span style='color: #949494;font-style: italic;'>&lt;S3:</span><span>
+#&gt; # </span><span style='color: #949494;font-style: italic;'>  glue&gt;</span><span></div><div class='input'><span class='fu'>search_indicator</span>(<span class='kw'>time_series_code</span> <span class='kw'>=</span> <span class='st'>"KBP1000"</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 2 x 7</span><span>
+#&gt;   time_series description_and… series version_descrip… frequency unit_of_measure
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> KBP1000     South African R… J      </span><span style='color: #BB0000;'>NA</span><span>               J1        RMILL          
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> KBP1000     South African R… M      </span><span style='color: #BB0000;'>NA</span><span>               M1        RMILL          
+#&gt; </span><span style='color: #949494;'># … with 1 more variable: code </span><span style='color: #949494;font-style: italic;'>&lt;S3: glue&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

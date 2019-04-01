@@ -13,7 +13,7 @@ Although the greatest care is taken to provide good data, the maintainer/s of th
 
 The package is built around the main `sarb_code` function, with two helper functions. The first providing a way to search for an indicator and its meta information: `search_indicator`. The second function is to request an access token for the API: `token_request`.
 
-# Getting a request token
+### Getting a request token
 
 Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct (to a certain degree - the security setup isn't fort knox), it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analystics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
 
@@ -24,37 +24,59 @@ To request a token from the service follow 2 simple steps:
 * Step 1: request a token
 
 ``` r
-
 token_request()
 
-Successful token creation
-$status
-[1] 200
-
-$msg
-[1] "Successful token creation"
-
-$info
-          address                            token
-122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364
+#> Successful token creation
+#> $status
+#> [1] 200
+#> 
+#> $msg
+#> [1] "Successful token creation"
+#> 
+#> $info
+#>           address                            token
+#> 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364
 
 ```
 
 * Step 2: add token to environment or options in your `.Rprofile`
 
 ```r
-options("sarb.token" = "hashhashhash")
-Sys.setenv("sarb.token" = "hashhashhash")
+options("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
+Sys.setenv("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 ```
 
 This way you will not need to send the token along when making a request for data
 
-## Example
+## Searching code
 
-This is a basic example which shows you how to solve a common problem:
+The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking. 
+
+To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the `search_indicator` function
 
 ``` r
-## basic example code
+## Using the description
+
+search_indicator(description = "Expenditure")
+#> # A tibble: 6 x 7
+#>   time_series description_and_vers… series version_description      frequency unit_of_measure code  
+#>   <chr>       <S3: glue>            <chr>  <chr>                    <chr>     <chr>           <S3: >
+#> 1 KBP6045     Expenditure on gross… C      Constant 2010 prices     K1        RMILL           KBP60…
+#> 2 KBP6045     Expenditure on gross… D      Constant 2010 prices. S… K1        RMILL           KBP60…
+#> 3 KBP6045     Expenditure on gross… J      Current prices           J1        RMILL           KBP60…
+#> 4 KBP6045     Expenditure on gross… K      Current prices           K1        RMILL           KBP60…
+#> 5 KBP6045     Expenditure on gross… L      Current prices. Seasona… K1        RMILL           KBP60…
+#> 6 KBP6045     Expenditure on gross… Y      Constant 2010 prices     J1        RMILL           KBP60…
+
+## Using the code
+
+search_indicator(time_series_code = "KBP1000")
+
+#> # A tibble: 2 x 7
+#>   time_series description_and_version        series version_descript… frequency unit_of_measure code  
+#>   <chr>       <S3: glue>                     <chr>  <chr>             <chr>     <chr>           <S3: >
+#> 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…
+#> 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…
 ```
 
 # Development guidelines
