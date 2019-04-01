@@ -20,5 +20,5 @@ A function that searches all available indicators based on description input or 
 \examples{
 
 search_indicator(description = "GDP")
-search_indicator(time_series = "KBP1000")
+search_indicator(time_series_code = "KBP1000")
 }

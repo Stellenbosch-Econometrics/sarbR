@@ -6,13 +6,20 @@ The goal of sarbR is to ...
 
 get_token()
 
-token restrictions to 100 calls an hour (until server load can be determined)
+token restrictions to 200 calls an hour (until server load can be determined)
 
 * remember to set environment the token:
 
 ``` r
-Sys.setenv(sarbR_token = "hashhashhash")
+Sys.setenv("sarb.token" = "hashhashhash")
 ```
+
+``` r
+options("sarb.token" = "hashhashhash")
+```
+
+
+
 
 * regulate access by adding token to mysql DB everytime a call is made timestamp + IP
 - key token and IP combinations 

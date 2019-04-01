@@ -2,7 +2,6 @@
 #'
 #' @import httr
 #' @importFrom jsonlite fromJSON
-#' @importFrom rlang `%||%`
 #' @description Request SARB data using the designated code with format KBPXXXX
 #' @examples
 #'
@@ -16,18 +15,18 @@ sarb_code <- function(code, token = NULL){
 
   token %||%
     getOption("sarb.token") %||%
-    Sys.getenv("sarb.token") %||%
+    if(Sys.getenv("sarb.token") == "") NULL %||%
     stop("Token not specified")
 
-  xxx <- GET(
+  res <- GET(
     glue("http://197.85.7.139:4500/sarb?code={code}"),
-    add_headers(token = "cb9466d5305a0db2e7171cd9f83e")
+    add_headers(token = token)
   )
-  res_x <- jsonlite::fromJSON(content(xxx, "text", encoding = "UTF-8"))
+  res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
 
-  if(xxx$status_code != 200)
-    stop(res_x)
+  if(res$status_code != 200)
+    stop(res)
 
-  res_x %>%
+  res %>%
     tbl_df
 }

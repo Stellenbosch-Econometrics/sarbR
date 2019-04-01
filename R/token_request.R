@@ -12,12 +12,12 @@
 #'
 
 token_request <- function(){
-  x <- GET(
+  res <- GET(
     "http://197.85.7.139:4500/token_pls",
     add_headers(token = "token_request")
   )
-  x <- jsonlite::fromJSON(content(x, "text", encoding = "UTF-8"))
-  message(x$msg)
+  res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
+  message(res$msg)
 
-  return(x)
+  return(res)
 }
