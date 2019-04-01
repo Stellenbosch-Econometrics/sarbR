@@ -4,7 +4,7 @@
 \alias{search_indicator}
 \title{Seach Indicator}
 \usage{
-search_indicator(description, code)
+search_indicator(description, time_series_code)
 }
 \arguments{
 \item{description}{description of indicator to look up}
@@ -20,5 +20,5 @@ A function that searches all available indicators based on description input or 
 \examples{
 
 search_indicator(description = "GDP")
-search_indicator(code = "KBP1000")
+search_indicator(time_series = "KBP1000")
 }

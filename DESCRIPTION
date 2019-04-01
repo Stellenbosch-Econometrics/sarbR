@@ -18,4 +18,5 @@ Imports:
     jsonlite,
     magrittr,
     glue,
-    lubridate
+    lubridate,
+    httr

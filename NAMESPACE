@@ -2,5 +2,7 @@
 
 export("%>%")
 export(search_indicator)
+export(token_request)
 import(dplyr)
+import(httr)
 importFrom(magrittr,"%>%")
