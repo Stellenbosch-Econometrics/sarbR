@@ -1,6 +1,7 @@
 #' Token Request
 #'
 #' @import httr
+#' @import jsonlite
 #' @description Request a token from the server to use the api service
 #' @examples
 #'
@@ -17,6 +18,6 @@ token_request <- function(){
   )
   x <- jsonlite::fromJSON(content(x, "text", encoding = "UTF-8"))
   message(x$msg)
-  
+
   return(x)
 }
