@@ -14,6 +14,11 @@ Request SARB data using the designated code with format KBPXXXX
 }
 \examples{
 
-token <- token_request()
-print(token)
+sarb_code(code = "KBP1434D", token = "your token here")
+
+options(sarb.token = "your token here")
+sarb_code(code = "KBP1434D")
+
+Sys.setenv("sarb.token" = "your token here")
+sarb_code(code = "KBP1434D")
 }

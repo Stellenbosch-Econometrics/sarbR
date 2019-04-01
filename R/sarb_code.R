@@ -5,8 +5,13 @@
 #' @description Request SARB data using the designated code with format KBPXXXX
 #' @examples
 #'
-#' token <- token_request()
-#' print(token)
+#' sarb_code(code = "KBP1434D", token = "your token here")
+#'
+#' options(sarb.token = "your token here")
+#' sarb_code(code = "KBP1434D")
+#'
+#' Sys.setenv("sarb.token" = "your token here")
+#' sarb_code(code = "KBP1434D")
 #' @return list
 #' @export
 #'
@@ -19,9 +24,12 @@ sarb_code <- function(code, token = NULL){
     stop("Token not specified")
 
   res <- GET(
-    glue("http://197.85.7.139:4500/sarb?code={code}"),
-    add_headers(token = token)
+    glue("https://197.85.7.139/sarb?code={code}"),
+    authenticate(get("user"), get("passw")),
+    add_headers(token = token),
+    config(ssl_verifypeer = 0)
   )
+
   res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
 
   if(res$status_code != 200)
