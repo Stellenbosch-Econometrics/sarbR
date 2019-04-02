@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Provides an Interface to an Author Maintained Database of SARB data (Title Case) • sarbR</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
@@ -47,6 +53,9 @@
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
+<li>
+  <a href="news/index.html">Changelog</a>
+</li>
       </ul>
 <ul class="nav navbar-nav navbar-right"></ul>
 </div>
@@ -62,7 +71,9 @@
 
 <div id="sarbr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#sarbr" class="anchor"></a>sarbR</h1></div>
+<a href="#sarbr" class="anchor"></a>sarbR <img src="logo.png" align="right" alt="" width="120">
+</h1></div>
+
 <p>The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release.</p>
 <p>At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s <code>sarbR</code> package aims to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple <code>sarb_code</code> function.</p>
 <div id="disclaimer" class="section level2">
@@ -75,6 +86,10 @@
 <h1 class="hasAnchor">
 <a href="#flow-of-the-package" class="anchor"></a>Flow of the package</h1>
 <p>The package is built around the main <code>sarb_code</code> function, with two helper functions. The first providing a way to search for an indicator and its meta information: <code>search_indicator</code>. The second function is to request an access token for the API: <code>token_request</code>.</p>
+<div id="installation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#installation" class="anchor"></a>Installation</h3>
+</div>
 <div id="getting-a-request-token" class="section level3">
 <h3 class="hasAnchor">
 <a href="#getting-a-request-token" class="anchor"></a>Getting a request token</h3>
@@ -84,8 +99,7 @@
 <ul>
 <li>Step 1: request a token</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">
-<span class="kw"><a href="reference/token_request.html">token_request</a></span>()
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/token_request.html">token_request</a></span>()
 
 <span class="co">#&gt; Successful token creation</span>
 <span class="co">#&gt; $status</span>
@@ -101,15 +115,15 @@
 <li>Step 2: add token to environment or options in your <code>.Rprofile</code>
 </li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "hashhashhash"</span>)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.setenv">Sys.setenv</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "hashhashhash"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/options">options</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "f84sdsfsdce65eege7dbacd93ac3dc073e364"</span>)
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.setenv">Sys.setenv</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "f84sdsfsdce65eege7dbacd93ac3dc073e364"</span>)</code></pre></div>
 <p>This way you will not need to send the token along when making a request for data</p>
 </div>
-<div id="searching-code" class="section level2">
-<h2 class="hasAnchor">
-<a href="#searching-code" class="anchor"></a>Searching code</h2>
+<div id="looking-for-the-correct-indicator-code" class="section level3">
+<h3 class="hasAnchor">
+<a href="#looking-for-the-correct-indicator-code" class="anchor"></a>Looking for the correct indicator code</h3>
 <p>The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking.</p>
-<p>To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the <code>search_indicator</code> function</p>
+<p>To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the <code>search_indicator</code> function. This function is a convenient wrapper around the <code>indicator_codes</code> dataset</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Using the description
 
 <span class="kw"><a href="reference/search_indicator.html">search_indicator</a></span>(<span class="dt">description =</span> <span class="st">"Expenditure"</span>)
@@ -132,50 +146,18 @@
 <span class="co">#&gt;   &lt;chr&gt;       &lt;S3: glue&gt;                     &lt;chr&gt;  &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;           &lt;S3: &gt;</span>
 <span class="co">#&gt; 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…</span>
 <span class="co">#&gt; 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…</span></code></pre></div>
+<p>The package also includes data that helps you understand the frequency column used in the <code>indicator_codes</code> dataset</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sarbR<span class="op">::</span>frequency_description
+
+<span class="co">#&gt;   Description                           Frequency</span>
+<span class="co">#&gt; 1          D6          Daily - Monday to Saturday</span>
+<span class="co">#&gt; 2          W3              Weekly as on Wednesday</span>
+<span class="co">#&gt; 3          W6         Weekly - Monday to Saturday</span>
+<span class="co">#&gt; 4          M1                             Monthly</span>
+<span class="co">#&gt; 5          K1                           Quarterly</span>
+<span class="co">#&gt; 6          J1 Annually - 1 January to 31 December</span>
+<span class="co">#&gt; 7          J2      Annually - 1 April to 31 March</span></code></pre></div>
 </div>
-</div>
-<div id="development-guidelines" class="section level1">
-<h1 class="hasAnchor">
-<a href="#development-guidelines" class="anchor"></a>Development guidelines</h1>
-<p>Use of packages:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(devtools)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(usethis)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(pkgdown)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(testthat)</code></pre></div>
-<p>Maybe add some nice message colors with</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(crayon)
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">red</a></span>(<span class="st">"This is red"</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-<span class="co">#&gt; This is red</span>
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cat">cat</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">blue</a></span>(<span class="st">"This is blue</span><span class="ch">\n</span><span class="st">"</span>), <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)
-<span class="co">#&gt; This is blue</span>
-<span class="co">#&gt; </span>
-
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/message">message</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">green</a></span>(<span class="st">"This is green"</span>))
-<span class="co">#&gt; This is green</span>
-
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/warning">warning</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">bold</a></span>(<span class="st">"This is bold"</span>))
-<span class="co">#&gt; Warning: This is bold</span>
-Some text
-
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/stop">stop</a></span>(crayon<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/crayon/topics/crayon">italic</a></span>(<span class="st">"This is italic"</span>))</code></pre></div>
-<p>For version control I am using <code>git flow</code></p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">git</span> flow init
-
-<span class="fu">git</span> flow feature start [name]
-<span class="fu">git</span> add .
-<span class="fu">git</span> commit -m
-<span class="fu">git</span> flow feature finish  [name]
-
-<span class="fu">git</span> flow hotfix start [name]
-<span class="fu">git</span> add .
-<span class="fu">git</span> commit -m
-<span class="fu">git</span> flow hotfix finish  [name]
-
-<span class="co"># Push to master</span>
-<span class="fu">git</span> flow release start [name]
-<span class="fu">git</span> add .
-<span class="fu">git</span> commit -m
-<span class="fu">git</span> flow release finish [name]</code></pre></div>
 </div>
 
   </div>
@@ -184,7 +166,7 @@ Some text
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Report a bug at <br><a href="https://github.com/XXX">https://​github.com/​XXX</a>
+<li>Report a bug at <br><a href="https://github.com/HanjoStudy/sarbR/issues">https://​github.com/​HanjoStudy/​sarbR/​issues</a>
 </li>
 </ul>
 </div>
@@ -199,15 +181,21 @@ Some text
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>The package maintainer <br><small class="roles"> Maintainer </small>  </li>
+<li>Hanjo Odendaal <br><small class="roles"> Maintainer </small>  </li>
 </ul>
 </div>
 
-  </div>
+  <div class="dev-status">
+<h2>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
+</ul>
+</div>
+</div>
 </div>
 
       <footer><div class="copyright">
-  <p>Developed by The package maintainer.</p>
+  <p>Developed by Hanjo Odendaal.</p>
 </div>
 
 <div class="pkgdown">

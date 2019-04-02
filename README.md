@@ -1,4 +1,6 @@
-# sarbR
+# sarbR <img src="logo.png" align="right" alt="" width="120" />
+
+[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
 The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release. 
 
@@ -12,6 +14,9 @@ Although the greatest care is taken to provide good data, the maintainer/s of th
 # Flow of the package
 
 The package is built around the main `sarb_code` function, with two helper functions. The first providing a way to search for an indicator and its meta information: `search_indicator`. The second function is to request an access token for the API: `token_request`.
+
+### Installation
+
 
 ### Getting a request token
 
@@ -48,11 +53,11 @@ Sys.setenv("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 
 This way you will not need to send the token along when making a request for data
 
-## Searching code
+### Looking for the correct indicator code
 
 The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking. 
 
-To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the `search_indicator` function
+To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the `search_indicator` function. This function is a convenient wrapper around the `indicator_codes` dataset
 
 ``` r
 ## Using the description
@@ -79,55 +84,17 @@ search_indicator(time_series_code = "KBP1000")
 #> 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…
 ```
 
-# Development guidelines
+The package also includes data that helps you understand the frequency column used in the `indicator_codes` dataset
 
-Use of packages:
-
-``` r
-library(devtools)
-library(usethis)
-library(pkgdown)
-library(testthat)
-```
-
- Maybe add some nice message colors with
 ```r
-library(crayon)
-cat(crayon::red("This is red"), "\n")
-#> This is red
-cat(crayon::blue("This is blue\n"), "\n")
-#> This is blue
-#> 
+sarbR::frequency_description
 
-message(crayon::green("This is green"))
-#> This is green
-
-warning(crayon::bold("This is bold"))
-#> Warning: This is bold
-Some text
-
-stop(crayon::italic("This is italic"))
-```
-
-For version control I am using `git flow`
-
-```bash
-git flow init
-
-git flow feature start [name]
-git add .
-git commit -m
-git flow feature finish  [name]
-
-git flow hotfix start [name]
-git add .
-git commit -m
-git flow hotfix finish  [name]
-
-# Push to master
-git flow release start [name]
-git add .
-git commit -m
-git flow release finish [name]
-
+#>   Description                           Frequency
+#> 1          D6          Daily - Monday to Saturday
+#> 2          W3              Weekly as on Wednesday
+#> 3          W6         Weekly - Monday to Saturday
+#> 4          M1                             Monthly
+#> 5          K1                           Quarterly
+#> 6          J1 Annually - 1 January to 31 December
+#> 7          J2      Annually - 1 April to 31 March
 ```

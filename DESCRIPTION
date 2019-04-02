@@ -4,7 +4,7 @@ Title: Provides an Interface to an Author Maintained Database of SARB data (Titl
 Version: 0.0.0.9000
 Author: person("Hanjo", "Odendaal", email = "hanjo.oden@gmail.com",
                   role = c("aut", "cre"))
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: Hanjo Odendaal <hanjo.oden@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: GPL-3 + file LICENSE
@@ -12,7 +12,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)
 RoxygenNote: 6.1.1
-BugReports: https://github.com/XXX
+BugReports: https://github.com/HanjoStudy/sarbR/issues
 Imports:
     dplyr,
     jsonlite,
