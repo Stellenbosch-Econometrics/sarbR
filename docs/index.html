@@ -5,18 +5,18 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Provides an Interface to an Author Maintained Database of SARB data (Title Case) • sarbR</title>
+<title>Provides an Interface to an Author Maintained Database of SARB data • sarbR</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Provides an Interface to an Author Maintained Database of SARB data (Title Case)">
+<script src="pkgdown.js"></script><meta property="og:title" content="Provides an Interface to an Author Maintained Database of SARB data">
 <meta property="og:description" content="More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.">
 <meta name="twitter:card" content="summary">
@@ -57,7 +57,14 @@
   <a href="news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/HanjoStudy/sarbR">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -75,11 +82,15 @@
 </h1></div>
 
 <p>The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release.</p>
-<p>At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s <code>sarbR</code> package aims to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple <code>sarb_code</code> function.</p>
+<p>At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s <code>sarbR</code> package aim to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple <code>sarb_code</code> function.</p>
 <div id="disclaimer" class="section level2">
 <h2 class="hasAnchor">
 <a href="#disclaimer" class="anchor"></a>Disclaimer</h2>
-<p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API. Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p>
+<ul>
+<li><p>This package is in no way endorsed or associated with the South African Reserve Bank.</p></li>
+<li><p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API.</p></li>
+<li><p>Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p></li>
+</ul>
 </div>
 </div>
 <div id="flow-of-the-package" class="section level1">
@@ -89,6 +100,10 @@
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h3>
+<p>To install the package</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install development version from GitHub</span>
+
+devtools<span class="op">::</span><span class="kw">install_githb</span>(<span class="st">"HanjoStudy/sarbR"</span>)</code></pre></div>
 </div>
 <div id="getting-a-request-token" class="section level3">
 <h3 class="hasAnchor">
@@ -119,9 +134,18 @@
 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/Sys.setenv">Sys.setenv</a></span>(<span class="st">"sarb.token"</span> =<span class="st"> "f84sdsfsdce65eege7dbacd93ac3dc073e364"</span>)</code></pre></div>
 <p>This way you will not need to send the token along when making a request for data</p>
 </div>
-<div id="looking-for-the-correct-indicator-code" class="section level3">
+<div id="sarb_code" class="section level3">
 <h3 class="hasAnchor">
-<a href="#looking-for-the-correct-indicator-code" class="anchor"></a>Looking for the correct indicator code</h3>
+<a href="#sarb_code" class="anchor"></a>sarb_code</h3>
+<p>The <code>sarb_code</code> function is the main function of the package. This functions interacts with a <code>plumber</code> API that has access to a MySQL database with the latest quarterly data.</p>
+<p>To use request the data, the whole code needs to be provided. As an example, if you would like to reques <strong>Expenditure on gross domestic product</strong> at <strong>Current prices</strong> at a <strong>yearly</strong> frequency, you need to request <em>KBP6045J</em></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sarb_code.html">sarb_code</a></span>(<span class="dt">code =</span> <span class="st">"KBP6045J"</span>)</code></pre></div>
+<p>Or if the the token is not set as in the above mentioned manner (in the <code>.Rprofile</code>), then it can be passed along to the function</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/sarb_code.html">sarb_code</a></span>(<span class="dt">code =</span> <span class="st">"KBP6045J"</span>, <span class="dt">token =</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span>)</code></pre></div>
+</div>
+<div id="looking-up-indicator-codes" class="section level3">
+<h3 class="hasAnchor">
+<a href="#looking-up-indicator-codes" class="anchor"></a>Looking up indicator codes</h3>
 <p>The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking.</p>
 <p>To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the <code>search_indicator</code> function. This function is a convenient wrapper around the <code>indicator_codes</code> dataset</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Using the description
@@ -166,6 +190,8 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/HanjoStudy/sarbR">https://​github.com/​HanjoStudy/​sarbR</a>
+</li>
 <li>Report a bug at <br><a href="https://github.com/HanjoStudy/sarbR/issues">https://​github.com/​HanjoStudy/​sarbR/​issues</a>
 </li>
 </ul>
@@ -189,6 +215,8 @@
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
+<li><a href="https://github.com/HanjoStudy/sabR/commits/master"><img src="https://img.shields.io/github/last-commit/HanjoStudy/sabR.svg"></a></li>
+<li><a href="https://cran.r-project.org/package=sarbR"><img src="https://www.r-pkg.org/badges/version/sarbR" alt="CRAN Status"></a></li>
 </ul>
 </div>
 </div>

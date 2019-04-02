@@ -1,15 +1,22 @@
+
 # sarbR <img src="logo.png" align="right" alt="" width="120" />
 
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![](https://img.shields.io/github/last-commit/HanjoStudy/sabR.svg)](https://github.com/HanjoStudy/sabR/commits/master)
+[![CRAN Status](https://www.r-pkg.org/badges/version/sarbR)](https://cran.r-project.org/package=sarbR)
+
 
 The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release. 
 
-At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s `sarbR` package aims to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple `sarb_code` function. 
+At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s `sarbR` package aim to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple `sarb_code` function. 
 
 ## Disclaimer
 
-Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API. 
-Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.  
+* This package is in no way endorsed or associated with the South African Reserve Bank.
+
+* Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API. 
+
+* Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.  
 
 # Flow of the package
 
@@ -17,6 +24,13 @@ The package is built around the main `sarb_code` function, with two helper funct
 
 ### Installation
 
+To install the package
+
+```r
+# Install development version from GitHub
+
+devtools::install_githb("HanjoStudy/sarbR")
+```
 
 ### Getting a request token
 
@@ -53,7 +67,21 @@ Sys.setenv("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 
 This way you will not need to send the token along when making a request for data
 
-### Looking for the correct indicator code
+### sarb_code
+
+The `sarb_code` function is the main function of the package. This functions interacts with a `plumber` API that has access to a MySQL database with the latest quarterly data.
+
+To use request the data, the whole code needs to be provided. As an example, if you would like to reques __Expenditure on gross domestic product__ at __Current prices__ at a __yearly__ frequency, you need to request *KBP6045J*
+
+```r
+sarb_code(code = "KBP6045J")
+```
+Or if the the token is not set as in the above mentioned manner (in the `.Rprofile`), then it can be passed along to the function
+```r
+sarb_code(code = "KBP6045J", token = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
+```
+
+### Looking up indicator codes
 
 The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking. 
 

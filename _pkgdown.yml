@@ -1,0 +1,5 @@
+title: sarbR
+url: https://github.com/HanjoStudy/sarbR/tree/develop
+template:
+  params:
+    bootswatch: flatly
