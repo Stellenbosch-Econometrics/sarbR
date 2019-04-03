@@ -36,7 +36,6 @@ sarb_code <- function(code, token = NULL){
 
   res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
 
-
   res %>%
     tbl_df
 }

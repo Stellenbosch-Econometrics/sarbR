@@ -21,3 +21,5 @@ Imports:
     glue,
     lubridate,
     httr
+Suggests: 
+    testthat

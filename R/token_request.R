@@ -19,6 +19,10 @@ token_request <- function(){
     add_headers(token = "token_request"),
     config(ssl_verifypeer = 0)
   )
+
+  if(class(res) != "response")
+    stop(res)
+
   res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
   message(res$msg)
 
