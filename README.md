@@ -2,7 +2,7 @@
 # sarbR <img src="logo.png" align="right" alt="" width="120" />
 
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![](https://img.shields.io/github/last-commit/HanjoStudy/sabR.svg)](https://github.com/HanjoStudy/sarbR/commits/master)
+[![](https://img.shields.io/github/last-commit/HanjoStudy/sarbR.svg)](https://github.com/HanjoStudy/sarbR/commits/master)
 [![CRAN Status](https://www.r-pkg.org/badges/version/sarbR)](https://cran.r-project.org/package=sarbR)
 [![Coverage Status](https://img.shields.io/codecov/c/github/HanjoStudy/sarbR/master.svg)](https://codecov.io/github/HanjoStudy/sarbR?branch=master)
 [![Travis-CI Build Status](https://travis-ci.org/HanjoStudy/sarbR.svg?branch=master)](https://travis-ci.org/HanjoStudy/sarbR)
