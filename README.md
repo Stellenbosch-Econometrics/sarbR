@@ -4,7 +4,8 @@
 [![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![](https://img.shields.io/github/last-commit/HanjoStudy/sabR.svg)](https://github.com/HanjoStudy/sarbR/commits/master)
 [![CRAN Status](https://www.r-pkg.org/badges/version/sarbR)](https://cran.r-project.org/package=sarbR)
-[![Coverage status](https://codecov.io/gh/HanjoStudy/sarbr/branch/master/graph/badge.svg)](https://codecov.io/gh/HanjoStudy/sarbr?branch=master)
+[![Coverage Status](https://img.shields.io/codecov/c/github/HanjoStudy/sarbR/master.svg)](https://codecov.io/github/HanjoStudy/sarbR?branch=master)
+[![Travis-CI Build Status](https://travis-ci.org/HanjoStudy/sarbR.svg?branch=master)](https://travis-ci.org/HanjoStudy/sarbR)
 
 The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release. 
 

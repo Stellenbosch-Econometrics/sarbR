@@ -21,5 +21,6 @@ Imports:
     glue,
     lubridate,
     httr
-Suggests: 
-    testthat
+Suggests:
+    testthat,
+    covr
