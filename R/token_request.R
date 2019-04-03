@@ -14,7 +14,7 @@
 token_request <- function(){
 
   res <- GET(
-    "https://197.85.7.139/token_pls",
+    "api.daeconomist.com/service/sarbr/token_pls",
     authenticate(get("user"), get("passw")),
     add_headers(token = "token_request"),
     config(ssl_verifypeer = 0)

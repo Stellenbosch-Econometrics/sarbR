@@ -25,7 +25,7 @@ sarb_code <- function(code, token = NULL){
     stop("Token not specified")
 
   res <- GET(
-    glue("https://197.85.7.139/sarb?code={code}"),
+    glue("api.daeconomist.com/service/sarbr/sarb?code={code}"),
     authenticate(get("user"), get("passw")),
     add_headers(token = token),
     config(ssl_verifypeer = 0)
