@@ -29,7 +29,7 @@ To install the package
 ```r
 # Install development version from GitHub
 
-devtools::install_githb("HanjoStudy/sarbR")
+devtools::install_github("HanjoStudy/sarbR")
 ```
 
 ### Getting a request token
