@@ -7,18 +7,20 @@
 #' @examples
 #'
 #' search_indicator(description = "GDP")
-#' search_indicator(code = "KBP1000")
+#' search_indicator(time_series_code = "KBP1000")
 #' @return data.frame
 #' @export
 #'
-search_indicator <- function(description, code){
 
-  if(!missing(code)){
+search_indicator <- function(description, time_series_code){
 
-    if(!is.character(code)) stop("Please provide code as a character")
+  data("indicator_codes", envir=environment())
+  if(!missing(time_series_code)){
+
+    if(!is.character(time_series_code)) stop("Please provide code as a character")
 
     ind <- indicator_codes %>%
-      filter(time_series_number == code) %>%
+      filter(time_series == time_series_code) %>%
       tbl_df
     return(ind)
   } else if(!missing(description)){

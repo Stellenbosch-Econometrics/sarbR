@@ -1,21 +1,23 @@
 Package: sarbR
 Type: Package
-Title: Provides an Interface to an Author Maintained Database of SARB data (Title Case)
-Version: 0.1.0
+Title: Provides an Interface to an Author Maintained Database of SARB data
+Version: 0.0.0.9000
 Author: person("Hanjo", "Odendaal", email = "hanjo.oden@gmail.com",
                   role = c("aut", "cre"))
-Maintainer: The package maintainer <yourself@somewhere.net>
+Maintainer: Hanjo Odendaal <hanjo.oden@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
+URL: https://github.com/HanjoStudy/sarbR
+BugReports: https://github.com/HanjoStudy/sarbR/issues
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)
-RoxygenNote: 6.0.1
-BugReports: https://github.com/XXX
+RoxygenNote: 6.1.1
 Imports:
     dplyr,
     jsonlite,
     magrittr,
     glue,
-    lubridate
+    lubridate,
+    httr
