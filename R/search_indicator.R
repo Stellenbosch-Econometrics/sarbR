@@ -1,26 +1,42 @@
 #' Seach Indicator
 #'
 #' @import dplyr
+#' @import tibble
 #' @description A function that searches all available indicators based on description input or code. If both are given then parameter code will take preference
 #' @param description description of indicator to look up
-#' @param code code of indicator to look up
+#' @param time_series time series to look for
+#' @param code code of indicator to return meta data from
 #' @examples
 #'
 #' search_indicator(description = "GDP")
-#' search_indicator(time_series_code = "KBP1000")
+#' search_indicator(time_series = "KBP1000")
+#' search_indicator(code = "KBP1000J")
 #' @return data.frame
 #' @export
 #'
 
-search_indicator <- function(description, time_series_code){
+search_indicator <- function(description, time_series, code = NULL){
 
   data("indicator_codes", envir=environment())
-  if(!missing(time_series_code)){
 
-    if(!is.character(time_series_code)) stop("Please provide code as a character")
+  if(!is.null(code))
+  {
+    stopifnot(is.character(code))
 
     ind <- indicator_codes %>%
-      filter(time_series == time_series_code) %>%
+      filter(code == !!code) %>%
+      tbl_df
+
+    return(ind)
+
+  }
+
+  if(!missing(time_series)){
+
+    if(!is.character(time_series)) stop("Please provide code as a character")
+
+    ind <- indicator_codes %>%
+      filter(time_series == !!time_series) %>%
       tbl_df
     return(ind)
   } else if(!missing(description)){
