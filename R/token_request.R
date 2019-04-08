@@ -7,6 +7,7 @@
 #'
 #' token <- token_request()
 #' print(token)
+#'
 #' @return list
 #' @export
 #'
