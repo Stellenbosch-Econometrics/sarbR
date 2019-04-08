@@ -120,7 +120,7 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>search_indicator</span>(<span class='no'>description</span>, <span class='no'>time_series_code</span>)</pre>
+    <pre class="usage"><span class='fu'>search_indicator</span>(<span class='no'>description</span>, <span class='no'>time_series</span>, <span class='kw'>code</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -130,8 +130,12 @@
       <td><p>description of indicator to look up</p></td>
     </tr>
     <tr>
+      <th>time_series</th>
+      <td><p>time series to look for</p></td>
+    </tr>
+    <tr>
       <th>code</th>
-      <td><p>code of indicator to look up</p></td>
+      <td><p>code of indicator to return meta data from</p></td>
     </tr>
     </table>
     
@@ -156,11 +160,15 @@
 #&gt; </span><span style='color: #555555;'> 9</span><span> KBP4419     Primary balance as percentage~ K      </span><span style='color: #BB0000;'>NA</span><span>               K1       
 #&gt; </span><span style='color: #555555;'>10</span><span> KBP4420     National government deficit /~ F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
 #&gt; </span><span style='color: #555555;'># ... with 91 more rows, and 2 more variables: unit_of_measure </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, code </span><span style='color: #555555;font-style: italic;'>&lt;S3:
-#&gt; #   glue&gt;</span><span></div><div class='input'><span class='fu'>search_indicator</span>(<span class='kw'>time_series_code</span> <span class='kw'>=</span> <span class='st'>"KBP1000"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
+#&gt; #   glue&gt;</span><span></div><div class='input'><span class='fu'>search_indicator</span>(<span class='kw'>time_series</span> <span class='kw'>=</span> <span class='st'>"KBP1000"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 2 x 7</span><span>
 #&gt;   time_series description_and_version         series version_descrip~ frequency
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;S3: glue&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
 #&gt; </span><span style='color: #555555;'>1</span><span> KBP1000     South African Reserve Bank lia~ J      </span><span style='color: #BB0000;'>NA</span><span>               J1       
 #&gt; </span><span style='color: #555555;'>2</span><span> KBP1000     South African Reserve Bank lia~ M      </span><span style='color: #BB0000;'>NA</span><span>               M1       
+#&gt; </span><span style='color: #555555;'># ... with 2 more variables: unit_of_measure </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, code </span><span style='color: #555555;font-style: italic;'>&lt;S3: glue&gt;</span><span></div><div class='input'><span class='fu'>search_indicator</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP1000J"</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 1 x 7</span><span>
+#&gt;   time_series description_and_version         series version_descrip~ frequency
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;S3: glue&gt;</span><span>                      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #555555;'>1</span><span> KBP1000     South African Reserve Bank lia~ J      </span><span style='color: #BB0000;'>NA</span><span>               J1       
 #&gt; </span><span style='color: #555555;'># ... with 2 more variables: unit_of_measure </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, code </span><span style='color: #555555;font-style: italic;'>&lt;S3: glue&gt;</span><span></div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

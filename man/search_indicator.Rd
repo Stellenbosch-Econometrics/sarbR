@@ -4,12 +4,14 @@
 \alias{search_indicator}
 \title{Seach Indicator}
 \usage{
-search_indicator(description, time_series_code)
+search_indicator(description, time_series, code = NULL)
 }
 \arguments{
 \item{description}{description of indicator to look up}
 
-\item{code}{code of indicator to look up}
+\item{time_series}{time series to look for}
+
+\item{code}{code of indicator to return meta data from}
 }
 \value{
 data.frame
@@ -20,5 +22,6 @@ A function that searches all available indicators based on description input or 
 \examples{
 
 search_indicator(description = "GDP")
-search_indicator(time_series_code = "KBP1000")
+search_indicator(time_series = "KBP1000")
+search_indicator(code = "KBP1000J")
 }

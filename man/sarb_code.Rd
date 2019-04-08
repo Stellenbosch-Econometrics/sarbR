@@ -13,12 +13,13 @@ list
 Request SARB data using the designated code with format KBPXXXX. This function is the worker function of the `sarbR` package and is used to interact with an API linked to the main dataabse
 }
 \examples{
-
 sarb_code(code = "KBP1434D", token = "f84d879ce6537dbacd93ac3dc073e364")
 
+Sys.setenv("sarb.token" = "f84d879ce6537dbacd93ac3dc073e364")
 options(sarb.token = "f84d879ce6537dbacd93ac3dc073e364")
+
 sarb_code(code = "KBP1434D")
 
-Sys.setenv("sarb.token" = "f84d879ce6537dbacd93ac3dc073e364")
 sarb_code(code = "KBP1434D")
+
 }

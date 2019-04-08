@@ -5,7 +5,7 @@
 [![](https://img.shields.io/github/last-commit/HanjoStudy/sarbR.svg)](https://github.com/HanjoStudy/sarbR/commits/master)
 [![CRAN Status](https://www.r-pkg.org/badges/version/sarbR)](https://cran.r-project.org/package=sarbR)
 [![Coverage Status](https://img.shields.io/codecov/c/github/HanjoStudy/sarbR/master.svg)](https://codecov.io/github/HanjoStudy/sarbR?branch=master)
-[![Travis-CI Build Status](https://travis-ci.org/HanjoStudy/sarbR.svg?branch=master)](https://travis-ci.org/HanjoStudy/sarbR)
+[![](https://img.shields.io/badge/devel%20version-0.0.0.9000-blue.svg)](https://github.com/HanjoStudy/sarbR)
 
 The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release. 
 
@@ -35,9 +35,9 @@ devtools::install_github("HanjoStudy/sarbR")
 
 ### Getting a request token
 
-Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct (to a certain degree - the security setup isn't fort knox), it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analystics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
+Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analystics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
 
-Once a token has been registered it is allowed to conduct 200 requests a day with a 1 second sleep between requests. This restriction will likely be lifted once workload is established. 
+> Once a token has been registered it is allowed to conduct 200 requests a day with a 1 second sleep between requests. This restriction will likely be lifted once workload is established. 
 
 To request a token from the service follow 2 simple steps:
 
@@ -59,7 +59,7 @@ token_request()
 
 ```
 
-* Step 2: add token to environment or options in your `.Rprofile`
+* Step 2: add token to environment or options in your `.Rprofile` or set it in your current session using:
 
 ```r
 options("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
@@ -86,11 +86,11 @@ sarb_code(code = "KBP6045J", token = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 
 The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking. 
 
-To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the `search_indicator` function. This function is a convenient wrapper around the `indicator_codes` dataset
+To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the `search_indicator` function. This function is a convenience wrapper around the `indicator_codes` dataset
+
+Using the description to look for specific series:
 
 ``` r
-## Using the description
-
 search_indicator(description = "Expenditure")
 #> # A tibble: 6 x 7
 #>   time_series description_and_vers… series version_description      frequency unit_of_measure code  
@@ -101,16 +101,29 @@ search_indicator(description = "Expenditure")
 #> 4 KBP6045     Expenditure on gross… K      Current prices           K1        RMILL           KBP60…
 #> 5 KBP6045     Expenditure on gross… L      Current prices. Seasona… K1        RMILL           KBP60…
 #> 6 KBP6045     Expenditure on gross… Y      Constant 2010 prices     J1        RMILL           KBP60…
+```
 
-## Using the code
+Look up the time series:
 
-search_indicator(time_series_code = "KBP1000")
+``` r
+search_indicator(time_series = "KBP1000")
 
 #> # A tibble: 2 x 7
 #>   time_series description_and_version        series version_descript… frequency unit_of_measure code  
 #>   <chr>       <S3: glue>                     <chr>  <chr>             <chr>     <chr>           <S3: >
 #> 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…
 #> 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…
+```
+
+You can also look up a specific series if you know the exact code:
+
+```r
+search_indicator(code = "KBP1000J")
+
+#> # A tibble: 2 x 7
+#>   time_series description_and_version        series version_descript… frequency unit_of_measure code  
+#>   <chr>       <S3: glue>                     <chr>  <chr>             <chr>     <chr>           <S3: >
+#> 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…
 ```
 
 The package also includes data that helps you understand the frequency column used in the `indicator_codes` dataset
@@ -127,3 +140,9 @@ sarbR::frequency_description
 #> 6          J1 Annually - 1 January to 31 December
 #> 7          J2      Annually - 1 April to 31 March
 ```
+
+## Dataset requests
+
+If you want to make a specific dataset available through the package, a request can be made through the issues page:
+
+https://github.com/HanjoStudy/sarbR/issues

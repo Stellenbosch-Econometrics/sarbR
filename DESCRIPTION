@@ -1,12 +1,12 @@
 Package: sarbR
 Type: Package
-Title: Provides an Interface to an Author Maintained Database of SARB data
+Title: Tidy Interface to SARB data
 Version: 0.0.0.9000
 Author: person("Hanjo", "Odendaal", email = "hanjo.oden@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: Hanjo Odendaal <hanjo.oden@gmail.com>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: This package is designed to provide a tidy interface to the South African Reserve Bank's data. 
+    Currently its main focus is the Quarterly Bulletin data, but aims to extend to other data releases as the package matures
 URL: https://github.com/HanjoStudy/sarbR
 BugReports: https://github.com/HanjoStudy/sarbR/issues
 License: GPL-3 + file LICENSE
@@ -20,7 +20,8 @@ Imports:
     magrittr,
     glue,
     lubridate,
-    httr
+    httr,
+    tibble
 Suggests:
     testthat,
     covr
