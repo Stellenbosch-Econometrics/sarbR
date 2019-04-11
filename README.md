@@ -19,6 +19,8 @@ At the time of the publication of this package (April 2019), the SARB still has 
 
 * Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.  
 
+* This package uses self-signed certificates on the API's side. This entails having to set `GET(..., config(ssl_verifypeer = 0))`, otherwise the get request returns: `SSL certificate problem: self signed certificate`
+
 # Flow of the package
 
 The package is built around the main `sarb_code` function, with two helper functions. The first providing a way to search for an indicator and its meta information: `search_indicator`. The second function is to request an access token for the API: `token_request`.
