@@ -61,7 +61,7 @@ token_request()
 
 ```
 
-* Step 2: add token to environment or options in your `.Rprofile` or set it in your current session using:
+* Step 2: add token to environment or options, `usethis::edit_r_environ()`, or set it in your current session using:
 
 ```r
 options("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
@@ -79,7 +79,7 @@ To use request the data, the whole code needs to be provided. As an example, if 
 ```r
 sarb_code(code = "KBP6045J")
 ```
-Or if the the token is not set as in the above mentioned manner (in the `.Rprofile`), then it can be passed along to the function
+Or if the the token is not set as in the above mentioned manner (in the `.Renviron`), then it can be passed along to the function
 ```r
 sarb_code(code = "KBP6045J", token = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 ```
