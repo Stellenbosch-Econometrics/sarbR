@@ -89,6 +89,7 @@
 <li><p>This package is in no way endorsed or associated with the South African Reserve Bank.</p></li>
 <li><p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API.</p></li>
 <li><p>Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p></li>
+<li><p>This package uses self-signed certificates on the API’s side. This entails having to set <code>GET(..., config(ssl_verifypeer = 0))</code>, otherwise the get request returns: <code>SSL certificate problem: self signed certificate</code></p></li>
 </ul>
 </div>
 </div>
