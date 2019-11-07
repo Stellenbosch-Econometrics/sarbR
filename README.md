@@ -13,7 +13,7 @@ At the time of the publication of this package (April 2019), the SARB still has 
 
 ## Disclaimer
 
-* This package is in no way endorsed or associated with the South African Reserve Bank.
+* This package is in no way endorsed or associated with the South African Reserve Bank (SARB).
 
 * Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API. 
 
@@ -37,7 +37,7 @@ devtools::install_github("HanjoStudy/sarbR")
 
 ### Getting a request token
 
-Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analystics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
+Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analytics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
 
 > Once a token has been registered it is allowed to conduct 200 requests a day with a 1 second sleep between requests. This restriction will likely be lifted once workload is established. 
 
