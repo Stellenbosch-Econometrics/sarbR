@@ -1,3 +1,4 @@
-# sarbR 0.0.0.9000
+# sarbR 0.0.1
 
-* Added a `NEWS.md` file to track changes to the package.
+* The 1 second sleep between requests have been removed
+* All SARB data is now automatically updated in the database as soon as it is made available on the website

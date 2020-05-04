@@ -11,6 +11,8 @@ The goal of sarbR is to provide an easy interface to the monthly release of the 
 
 At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s `sarbR` package aim to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple `sarb_code` function. 
 
+*Please be aware:* the data is updated in an automated fashion as soon as a new release is published on the SARB's website.
+
 ## Disclaimer
 
 * This package is in no way endorsed or associated with the South African Reserve Bank (SARB).
@@ -38,8 +40,8 @@ devtools::install_github("HanjoStudy/sarbR")
 ### Getting a request token
 
 Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analytics on request and hopefuly allows the small server to handle everyones request in an orderly manner.
-
-> Once a token has been registered it is allowed to conduct 200 requests a day with a 1 second sleep between requests. This restriction will likely be lifted once workload is established. 
+ 
+> Once a token has been registered it is allowed to conduct 200 requests a day. This restriction will likely be lifted once workload is established. 
 
 To request a token from the service follow 2 simple steps:
 
