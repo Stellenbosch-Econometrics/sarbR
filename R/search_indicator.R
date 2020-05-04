@@ -1,7 +1,5 @@
 #' Seach Indicator
 #'
-#' @import dplyr
-#' @import tibble
 #' @description A function that searches all available indicators based on description input or code. If both are given then parameter code will take preference
 #' @param description description of indicator to look up
 #' @param time_series time series to look for
@@ -13,6 +11,7 @@
 #' search_indicator(code = "KBP1000J")
 #' @return data.frame
 #' @export
+#' @importFrom dplyr filter tbl_df
 #'
 
 search_indicator <- function(description, time_series, code = NULL){
