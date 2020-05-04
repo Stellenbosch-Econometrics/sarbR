@@ -129,12 +129,38 @@
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>sarb_code</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP1434D"</span>, <span class='kw'>token</span> <span class='kw'>=</span> <span class='st'>"0b058adc9fe6c656e10f59a43eb2cfd5"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in sarb_code(code = "KBP1434D", token = "0b058adc9fe6c656e10f59a43eb2cfd5"): Your request did not include a valid TOKEN parameter. Please use sarbR::token_request(), to request a valid token</span></div><div class='input'>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.setenv'>Sys.setenv</a></span>(<span class='st'>"sarb.token"</span> <span class='kw'>=</span> <span class='st'>"0b058adc9fe6c656e10f59a43eb2cfd5"</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>options</a></span>(<span class='kw'>sarb.token</span> <span class='kw'>=</span> <span class='st'>"0b058adc9fe6c656e10f59a43eb2cfd5"</span>)
+    <pre class="examples"><div class='input'><span class='fu'>sarb_code</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP6045J"</span>, <span class='kw'>token</span> <span class='kw'>=</span> <span class='st'>"9eadf0a7a345a0cd286d81e74c555715"</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 74 x 6</span><span>
+#&gt;    date       original_date classification    frequency code     value
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 1946-01-01 19460000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>1</span><span>741
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 1947-01-01 19470000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>1</span><span>896
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 1948-01-01 19480000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>067
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 1949-01-01 19490000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>238
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 1950-01-01 19500000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>594
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 1951-01-01 19510000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>809
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 1952-01-01 19520000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>161
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 1953-01-01 19530000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>466
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 1954-01-01 19540000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>721
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 1955-01-01 19550000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>4</span><span>003
+#&gt; </span><span style='color: #949494;'># … with 64 more rows</span><span></div><div class='input'>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/Sys.setenv'>Sys.setenv</a></span>(<span class='st'>"sarb.token"</span> <span class='kw'>=</span> <span class='st'>"9eadf0a7a345a0cd286d81e74c555715"</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/options'>options</a></span>(<span class='kw'>sarb.token</span> <span class='kw'>=</span> <span class='st'>"9eadf0a7a345a0cd286d81e74c555715"</span>)
 
-<span class='fu'>sarb_code</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP1434D"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in sarb_code(code = "KBP1434D"): Your request did not include a valid TOKEN parameter. Please use sarbR::token_request(), to request a valid token</span></div><div class='input'>
-</div></pre>
+<span class='fu'>sarb_code</span>(<span class='kw'>code</span> <span class='kw'>=</span> <span class='st'>"KBP6045J"</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 74 x 6</span><span>
+#&gt;    date       original_date classification    frequency code     value
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 1946-01-01 19460000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>1</span><span>741
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 1947-01-01 19470000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>1</span><span>896
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 1948-01-01 19480000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>067
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 1949-01-01 19490000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>238
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 1950-01-01 19500000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>594
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 1951-01-01 19510000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>2</span><span>809
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 1952-01-01 19520000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>161
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 1953-01-01 19530000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>466
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 1954-01-01 19540000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>3</span><span>721
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 1955-01-01 19550000      national_accounts J1        KBP6045J  </span><span style='text-decoration: underline;'>4</span><span>003
+#&gt; </span><span style='color: #949494;'># … with 64 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
