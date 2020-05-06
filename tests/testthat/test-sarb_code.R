@@ -9,5 +9,5 @@ test_that("error on bad (not 200) request", {
 })
 
 test_that("succesful call returns tibble object", {
-  expect_is(sarb_code(code = "KBP1434D", token = "f84d879ce6537dbacd93ac3dc073e364"), c("data.frame", "tbl_df"))
+  expect_is(sarb_code(code = "KBP1434D", token = "f84d879ce6537dbacd93ac3dc073e364"), c("tibble", "tbl_df"))
 })

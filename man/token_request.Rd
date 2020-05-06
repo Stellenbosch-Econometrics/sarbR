@@ -13,8 +13,8 @@ list
 Request a token from the server to use the api service
 }
 \examples{
-
+\dontrun{
 token <- token_request()
 print(token)
-
+}
 }
