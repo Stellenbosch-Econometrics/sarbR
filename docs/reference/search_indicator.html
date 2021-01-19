@@ -71,7 +71,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sarbR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -147,7 +147,10 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>search_indicator</span>(<span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"GDP"</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 101 x 7</span><span>
+<span class='fu'>search_indicator</span>(<span class='kw'>description</span> <span class='kw'>=</span> <span class='st'>"GDP"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `tbl_df()` is deprecated as of dplyr 1.0.0.</span>
+#&gt; <span class='warning'>Please use `tibble::as_tibble()` instead.</span>
+#&gt; <span class='warning'><span style='color: #555555;'>This warning is displayed once every 8 hours.</span><span></span>
+#&gt; <span class='warning'></span><span style='color: #555555;'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span><span></span></div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 101 x 7</span><span>
 #&gt;    time_series description_and… series version_descrip… frequency
 #&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;glue&gt;</span><span>           </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
 #&gt; </span><span style='color: #BCBCBC;'> 1</span><span> KBP4116     Total loan debt… F      </span><span style='color: #BB0000;'>NA</span><span>               J2       
