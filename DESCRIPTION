@@ -1,9 +1,10 @@
 Package: sarbR
 Type: Package
 Title: Tidy Interface to SARB data
-Version: 0.1.0
+Version: 0.1.1
 Author: person("Hanjo", "Odendaal", email = "hanjo.oden@gmail.com",
-                  role = c("aut", "cre"))
+                  role = c("aut", "cre"), 
+                  orcid = '0000-0003-1172-0444')
 Maintainer: Hanjo Odendaal <hanjo.oden@gmail.com>
 Description: This package is designed to provide a tidy interface to the South African Reserve Bank's data. 
     Currently its main focus is the Quarterly Bulletin data, but aims to extend to other data releases as the package matures

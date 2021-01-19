@@ -2,6 +2,7 @@
 
 export("%>%")
 export("%||%")
+export(release_info)
 export(sarb_code)
 export(search_indicator)
 export(token_request)
