@@ -13,7 +13,7 @@
 #' @importFrom jsonlite fromJSON
 #'
 
-release_info <- function(dateformat = FALSE){
+release_info <- function(dateformat = FALSE, token = NULL){
 
   token <- token %||%
     getOption("sarb.token") %||%

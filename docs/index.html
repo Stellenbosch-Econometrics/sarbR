@@ -105,7 +105,8 @@
 <p>To install the package</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Install development version from GitHub</span></a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"HanjoStudy/sarbR"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-3" data-line-number="3">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"HanjoStudy/sarbR"</span>)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sarbR)</a></code></pre></div>
 </div>
 <div id="getting-a-request-token" class="section level3">
 <h3 class="hasAnchor">
@@ -129,7 +130,11 @@
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; $info</span></a>
 <a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;           address                            token</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co"># latest data on database</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="kw"><a href="reference/release_info.html">release_info</a></span>()</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; [1] "Latest release info: 2020-12-15"</span></a></code></pre></div>
 <ul>
 <li>Step 2: add token to environment or options, <code><a href="https://www.rdocumentation.org/packages/usethis/topics/edit">usethis::edit_r_environ()</a></code>, or set it in your current session using:</li>
 </ul>

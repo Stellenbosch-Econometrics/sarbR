@@ -4,7 +4,7 @@
 \alias{release_info}
 \title{Release Information}
 \usage{
-release_info(dateformat = FALSE)
+release_info(dateformat = FALSE, token = NULL)
 }
 \arguments{
 \item{dateformat}{return latest release information as date object}

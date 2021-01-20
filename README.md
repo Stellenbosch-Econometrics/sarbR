@@ -35,6 +35,7 @@ To install the package
 # Install development version from GitHub
 
 devtools::install_github("HanjoStudy/sarbR")
+library(sarbR)
 ```
 
 ### Getting a request token
@@ -60,6 +61,10 @@ token_request()
 #> $info
 #>           address                            token
 #> 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364
+
+# latest data on database
+release_info()
+#> [1] "Latest release info: 2020-12-15"
 
 ```
 
@@ -144,6 +149,7 @@ sarbR::frequency_description
 #> 6          J1 Annually - 1 January to 31 December
 #> 7          J2      Annually - 1 April to 31 March
 ```
+
 
 ## Dataset requests
 
