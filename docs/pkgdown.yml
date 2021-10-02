@@ -2,7 +2,7 @@ pandoc: 2.11.4
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2021-10-02T21:28Z
+last_built: 2021-10-02T21:33Z
 urls:
   reference: https://github.com/HanjoStudy/sarbR/tree/develop/reference
   article: https://github.com/HanjoStudy/sarbR/tree/develop/articles

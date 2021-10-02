@@ -100,7 +100,6 @@
 <li><p>This package is in no way endorsed or associated with the South African Reserve Bank (SARB).</p></li>
 <li><p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API.</p></li>
 <li><p>Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p></li>
-<li><p>This package uses self-signed certificates on the API’s side. This entails having to set <code>GET(..., config(ssl_verifypeer = 0))</code>, otherwise the get request returns: <code>SSL certificate problem: self signed certificate</code></p></li>
 </ul>
 </div>
 </div>
@@ -122,9 +121,6 @@
 <h3 class="hasAnchor">
 <a href="#getting-a-request-token" class="anchor"></a>Getting a request token</h3>
 <p>Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analytics on request and hopefuly allows the small server to handle everyones request in an orderly manner.</p>
-<blockquote>
-<p>Once a token has been registered it is allowed to conduct 200 requests a day. This restriction will likely be lifted once workload is established.</p>
-</blockquote>
 <p>To request a token from the service follow 2 simple steps:</p>
 <ul>
 <li>Step 1: request a token</li>
