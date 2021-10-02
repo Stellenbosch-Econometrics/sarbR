@@ -1,11 +1,9 @@
-#' Release Information
+#' All SARB available codes
 #'
-#' @description Returns the latest release date of the data
-#' @param dateformat return latest release information as date object
+#' @description Returns all available codes in the DB
 #' @examples
 #'\dontrun{
-#' release_info(dateformat = FALSE)
-#' release_info(dateformat = TRUE)
+#' all_codes()
 #'}
 #' @return list
 #' @export
@@ -13,7 +11,7 @@
 #' @importFrom jsonlite fromJSON
 #'
 
-release_info <- function(dateformat = FALSE, token = NULL){
+all_codes <- function(dateformat = FALSE, token = NULL){
 
   token <- token %||%
     getOption("sarb.token") %||%
@@ -21,7 +19,7 @@ release_info <- function(dateformat = FALSE, token = NULL){
     stop("Token not specified")
 
   res <- GET(
-    "sarbr.daeconomist.com/v1/releaseinfo",
+    "sarbr.daeconomist.com/v1/all_codes",
     add_headers(token = token)
   )
 
@@ -30,9 +28,6 @@ release_info <- function(dateformat = FALSE, token = NULL){
 
   res <- jsonlite::fromJSON(content(res, "text", encoding = "UTF-8"))
 
-  if(dateformat){
-    res <- as.Date(gsub("Latest release info: ", '', res))
-  }
-
-  return(res)
+  res %>%
+    as_tibble()
 }

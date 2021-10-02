@@ -4,7 +4,9 @@
 \name{frequency_description}
 \alias{frequency_description}
 \title{South African Reserve Bank frequency code metadata}
-\format{A data.frame with columns Description, Frequency}
+\format{
+A data.frame with columns Description, Frequency
+}
 \source{
 South African Reserve Bank
 }

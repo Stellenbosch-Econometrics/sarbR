@@ -4,7 +4,9 @@
 \name{indicator_codes}
 \alias{indicator_codes}
 \title{South African Reserve Bank indicator metadata}
-\format{A data.frame with columns time_series_number, description_and_version, series_code, version_description, frequency, unit_of_measure, full_ind_number}
+\format{
+A data.frame with columns time_series_number, description_and_version, series_code, version_description, frequency, unit_of_measure, full_ind_number
+}
 \source{
 South African Reserve Bank
 }

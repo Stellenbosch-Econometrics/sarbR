@@ -1,3 +1,7 @@
+# sarbR 0.1.2
+
+* [BREAKING CHANGE] - change route of API, removed basic auth
+
 # sarbR 0.1.1
 
 * Addition of function `release_info` to get information on latest release date of quaterly data in database

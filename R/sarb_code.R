@@ -16,6 +16,7 @@
 #' @export
 #' @import httr
 #' @importFrom jsonlite fromJSON
+#' @importFrom tibble as_tibble
 #' @importFrom glue glue
 #'
 
@@ -27,10 +28,8 @@ sarb_code <- function(code, token = NULL){
     stop("Token not specified")
 
   res <- GET(
-    glue("api.daeconomist.com/service/sarbr/sarb?code={code}"),
-    authenticate(get("user"), get("passw")),
-    add_headers(token = token),
-    config(ssl_verifypeer = 0)
+    glue("sarbr.daeconomist.com/v1/sarb?code={code}"),
+    add_headers(token = token)
   )
 
   if(res$status_code != 200)

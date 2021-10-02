@@ -15,10 +15,8 @@
 token_request <- function(){
 
   res <- GET(
-    "api.daeconomist.com/service/sarbr/token_pls",
-    authenticate(get("user"), get("passw")),
-    add_headers(token = "token_request"),
-    config(ssl_verifypeer = 0)
+    "sarbr.daeconomist.com/v1/token_pls",
+    add_headers(token = "token_request")
   )
 
   if(class(res) != "response")

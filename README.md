@@ -13,6 +13,10 @@ At the time of the publication of this package (April 2019), the SARB still has 
 
 *Please be aware:* the data is updated in an automated fashion as soon as a new release is published on the SARB's website.
 
+## Change on 2021-10-02
+
+* [BREAKING CHANGE] - change route of API, removed basic auth. Please reinstall package.
+
 ## Disclaimer
 
 * This package is in no way endorsed or associated with the South African Reserve Bank (SARB).
@@ -61,11 +65,6 @@ token_request()
 #> $info
 #>           address                            token
 #> 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364
-
-# latest data on database
-release_info()
-#> [1] "Latest release info: 2020-12-15"
-
 ```
 
 * Step 2: add token to environment or options, `usethis::edit_r_environ()`, or set it in your current session using:
@@ -73,6 +72,33 @@ release_info()
 ```r
 options("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
 Sys.setenv("sarb.token" = "f84sdsfsdce65eege7dbacd93ac3dc073e364")
+```
+
+### Latest data on database
+
+```r
+release_info()
+#> [1] "Latest release info: 2020-12-15"
+```
+
+### Latest data on database
+
+```r
+all_codes()
+#># A tibble: 4,316 x 1
+#>   code    
+#>   <chr>   
+#> 1 KBP1000J
+#> 2 KBP1000M
+#> 3 KBP1005J
+#> 4 KBP1005M
+#> 5 KBP1006J
+#> 6 KBP1006M
+#> 7 KBP1007J
+#> 8 KBP1007M
+#> 9 KBP1008J
+#>10 KBP1008M
+#># … with 4,306 more rows
 ```
 
 This way you will not need to send the token along when making a request for data

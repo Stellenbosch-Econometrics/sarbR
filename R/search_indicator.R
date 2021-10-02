@@ -11,7 +11,7 @@
 #' search_indicator(code = "KBP1000J")
 #' @return data.frame
 #' @export
-#' @importFrom dplyr filter tbl_df
+#' @importFrom dplyr filter as_tibble
 #'
 
 search_indicator <- function(description, time_series, code = NULL){
@@ -24,7 +24,7 @@ search_indicator <- function(description, time_series, code = NULL){
 
     ind <- indicator_codes %>%
       filter(code == !!code) %>%
-      tbl_df
+      as_tibble
 
     return(ind)
 
@@ -36,7 +36,7 @@ search_indicator <- function(description, time_series, code = NULL){
 
     ind <- indicator_codes %>%
       filter(time_series == !!time_series) %>%
-      tbl_df
+      as_tibble
     return(ind)
   } else if(!missing(description)){
 
@@ -44,7 +44,7 @@ search_indicator <- function(description, time_series, code = NULL){
 
     indicator_codes %>%
       filter(grepl(description, description_and_version)) %>%
-      tbl_df
+      as_tibble
   } else {
     stop("Neither description or code was provided. Please provide valid input, or refer to documentation for examples")
   }
