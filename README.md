@@ -15,6 +15,7 @@ At the time of the publication of this package (April 2019), the SARB still has 
 
 ## Change on 2021-10-02
 
+* Version: 0.1.2
 * [BREAKING CHANGE] - change route of API, removed basic auth. Please reinstall package.
 
 ## Disclaimer
