@@ -1,16 +1,16 @@
 Package: sarbR
 Type: Package
 Title: Tidy Interface to SARB data
-Version: 0.1.2
+Version: 0.1.3
 Author: person("Hanjo", "Odendaal", email = "hanjo.oden@gmail.com",
                   role = c("aut", "cre"), 
                   orcid = '0000-0003-1172-0444')
 Maintainer: Hanjo Odendaal <hanjo.oden@gmail.com>
 Description: This package is designed to provide a tidy interface to the South African Reserve Bank's data. 
     Currently its main focus is the Quarterly Bulletin data, but aims to extend to other data releases as the package matures
-URL: https://github.com/HanjoStudy/sarbR
-BugReports: https://github.com/HanjoStudy/sarbR/issues
-License: GPL-3 + file LICENSE
+URL: https://github.com/Stellenbosch-Econometrics/sarbR
+BugReports: https://github.com/Stellenbosch-Econometrics/sarbR/issues
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.0)

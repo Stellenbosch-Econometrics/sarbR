@@ -1,9 +1,9 @@
-pandoc: 2.11.4
-pkgdown: 1.6.1
-pkgdown_sha: ~
+pandoc: 2.19.2
+pkgdown: 1.6.1.9001
+pkgdown_sha: ce9781a15c7ea07df9fb17a11295ba4abec0b54b
 articles: {}
-last_built: 2021-10-02T21:33Z
+last_built: 2023-05-24T20:11Z
 urls:
-  reference: https://github.com/HanjoStudy/sarbR/tree/develop/reference
-  article: https://github.com/HanjoStudy/sarbR/tree/develop/articles
+  reference: https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference
+  article: https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/articles
 

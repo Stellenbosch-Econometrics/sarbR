@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -38,18 +40,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">sarbR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -59,7 +55,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/HanjoStudy/sarbR/">
+  <a href="https://github.com/Stellenbosch-Econometrics/sarbR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -79,48 +75,63 @@
 
 <div id="sarbr-" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#sarbr-" class="anchor"></a>sarbR <img src="logo.png" align="right" alt="" width="120">
+<a href="#sarbr-" class="anchor" aria-hidden="true"></a>sarbR <img src="logo.png" align="right" alt="" width="120">
 </h1></div>
 
-<p>The goal of sarbR is to provide an easy interface to the monthly release of the South African Reserve Bank Quarterly Bulletin data. Although the SARB has many other datasets, the Quarterly Bulletin makes up the bulk of the statistical release.</p>
-<p>At the time of the publication of this package (April 2019), the SARB still has no easy way of accessing the data through an programmatic interface (API). The maintainer/s <code>sarbR</code> package aim to fill this role by curating the data automatically from the SARB, updating a dedicated database and giving access to the data through the simple <code>sarb_code</code> function.</p>
-<p><em>Please be aware:</em> the data is updated in an automated fashion as soon as a new release is published on the SARB’s website.</p>
-<div id="change-on-2021-10-02" class="section level2">
-<h2 class="hasAnchor">
-<a href="#change-on-2021-10-02" class="anchor"></a>Change on 2021-10-02</h2>
-<ul>
-<li>Version: 0.1.2</li>
-<li>[BREAKING CHANGE] - change route of API, removed basic auth. Please reinstall package.</li>
-</ul>
-</div>
+<p>The goal of sarbR is to provide an easy interface to the monthly
+release of the South African Reserve Bank Quarterly Bulletin data.
+Although the SARB has many other datasets, the Quarterly Bulletin makes
+up the bulk of the statistical release.</p>
+<p>At the time of the publication of this package (April 2019), the SARB
+still has no easy way of accessing the data through an programmatic
+interface (API). The maintainer/s <code>sarbR</code> package aim to fill
+this role by curating the data automatically from the SARB, updating a
+dedicated database and giving access to the data through the simple
+<code>sarb_code</code> function.</p>
+<p><em>Please be aware:</em> the data is updated in an automated fashion
+as soon as a new release is published on the SARB’s website.</p>
 <div id="disclaimer" class="section level2">
 <h2 class="hasAnchor">
-<a href="#disclaimer" class="anchor"></a>Disclaimer</h2>
+<a href="#disclaimer" class="anchor" aria-hidden="true"></a>Disclaimer</h2>
 <ul>
-<li><p>This package is in no way endorsed or associated with the South African Reserve Bank (SARB).</p></li>
-<li><p>Given that no formal API is provided, the maintainers of this package rely on their own infrastructure to collect, curate, clean, maintain an up to date database and give access through a securely built API.</p></li>
-<li><p>Although the greatest care is taken to provide good data, the maintainer/s of this package take no responsibility in the service OR data being supplied.</p></li>
+<li><p>This package is in no way endorsed or associated with the South
+African Reserve Bank (SARB).</p></li>
+<li><p>Given that no formal API is provided, the maintainers of this
+package rely on their own infrastructure to collect, curate, clean,
+maintain an up to date database and give access through a securely built
+API.</p></li>
+<li><p>Although the greatest care is taken to provide good data, the
+maintainer/s of this package take no responsibility in the service OR
+data being supplied.</p></li>
 </ul>
 </div>
 </div>
 <div id="flow-of-the-package" class="section level1">
 <h1 class="hasAnchor">
-<a href="#flow-of-the-package" class="anchor"></a>Flow of the package</h1>
-<p>The package is built around the main <code>sarb_code</code> function, with two helper functions. The first providing a way to search for an indicator and its meta information: <code>search_indicator</code>. The second function is to request an access token for the API: <code>token_request</code>.</p>
+<a href="#flow-of-the-package" class="anchor" aria-hidden="true"></a>Flow of the package</h1>
+<p>The package is built around the main <code>sarb_code</code> function,
+with two helper functions. The first providing a way to search for an
+indicator and its meta information: <code>search_indicator</code>. The
+second function is to request an access token for the API:
+<code>token_request</code>.</p>
 <div id="installation" class="section level3">
 <h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<a href="#installation" class="anchor" aria-hidden="true"></a>Installation</h3>
 <p>To install the package</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Install development version from GitHub</span>
 
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span><span class="op">(</span><span class="st">"HanjoStudy/sarbR"</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/HanjoStudy/sarbR">sarbR</a></span><span class="op">)</span></code></pre></div>
+<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"Stellenbosch-Econometrics/sarbR"</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Stellenbosch-Econometrics/sarbR" class="external-link">sarbR</a></span><span class="op">)</span></code></pre></div>
 </div>
 <div id="getting-a-request-token" class="section level3">
 <h3 class="hasAnchor">
-<a href="#getting-a-request-token" class="anchor"></a>Getting a request token</h3>
-<p>Because the database is maintained on a small server and the maintainer wishes to keep the server protected from malicious conduct, it was decided to implement requests on a token basis. This ensures some measure of security, a bit of analytics on request and hopefuly allows the small server to handle everyones request in an orderly manner.</p>
+<a href="#getting-a-request-token" class="anchor" aria-hidden="true"></a>Getting a request token</h3>
+<p>Because the database is maintained on a small server and the
+maintainer wishes to keep the server protected from malicious conduct,
+it was decided to implement requests on a token basis. This ensures some
+measure of security, a bit of analytics on request and hopefuly allows
+the small server to handle everyones request in an orderly manner.</p>
 <p>To request a token from the service follow 2 simple steps:</p>
 <ul>
 <li>Step 1: request a token</li>
@@ -139,22 +150,24 @@
 <span class="co">#&gt;           address                            token</span>
 <span class="co">#&gt; 122.232.34.123 f84sdsfsdce65eege7dbacd93ac3dc073e364</span></code></pre></div>
 <ul>
-<li>Step 2: add token to environment or options, <code><a href="https://usethis.r-lib.org/reference/edit.html">usethis::edit_r_environ()</a></code>, or set it in your current session using:</li>
+<li>Step 2: add token to environment or options,
+<code><a href="https://usethis.r-lib.org/reference/edit.html" class="external-link">usethis::edit_r_environ()</a></code>, or set it in your current
+session using:</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span><span class="st">"sarb.token"</span> <span class="op">=</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html">Sys.setenv</a></span><span class="op">(</span><span class="st">"sarb.token"</span> <span class="op">=</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span><span class="st">"sarb.token"</span> <span class="op">=</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/Sys.setenv.html" class="external-link">Sys.setenv</a></span><span class="op">(</span><span class="st">"sarb.token"</span> <span class="op">=</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="latest-data-on-database" class="section level3">
 <h3 class="hasAnchor">
-<a href="#latest-data-on-database" class="anchor"></a>Latest data on database</h3>
+<a href="#latest-data-on-database" class="anchor" aria-hidden="true"></a>Latest data on database</h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/release_info.html">release_info</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; [1] "Latest release info: 2020-12-15"</span></code></pre></div>
 </div>
 <div id="latest-data-on-database-1" class="section level3">
 <h3 class="hasAnchor">
-<a href="#latest-data-on-database-1" class="anchor"></a>Latest data on database</h3>
+<a href="#latest-data-on-database-1" class="anchor" aria-hidden="true"></a>Latest data on database</h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/all_codes.html">all_codes</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;# A tibble: 4,316 x 1</span>
@@ -171,24 +184,38 @@
 <span class="co">#&gt; 9 KBP1008J</span>
 <span class="co">#&gt;10 KBP1008M</span>
 <span class="co">#&gt;# … with 4,306 more rows</span></code></pre></div>
-<p>This way you will not need to send the token along when making a request for data</p>
+<p>This way you will not need to send the token along when making a
+request for data</p>
 </div>
 <div id="sarb_code" class="section level3">
 <h3 class="hasAnchor">
-<a href="#sarb_code" class="anchor"></a>sarb_code</h3>
-<p>The <code>sarb_code</code> function is the main function of the package. This functions interacts with a <code>plumber</code> API that has access to a MySQL database with the latest quarterly data.</p>
-<p>To use request the data, the whole code needs to be provided. As an example, if you would like to reques <strong>Expenditure on gross domestic product</strong> at <strong>Current prices</strong> at a <strong>yearly</strong> frequency, you need to request <em>KBP6045J</em></p>
+<a href="#sarb_code" class="anchor" aria-hidden="true"></a>sarb_code</h3>
+<p>The <code>sarb_code</code> function is the main function of the
+package. This functions interacts with a <code>plumber</code> API that
+has access to a MySQL database with the latest quarterly data.</p>
+<p>To use request the data, the whole code needs to be provided. As an
+example, if you would like to reques <strong>Expenditure on gross
+domestic product</strong> at <strong>Current prices</strong> at a
+<strong>yearly</strong> frequency, you need to request
+<em>KBP6045J</em></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/sarb_code.html">sarb_code</a></span><span class="op">(</span>code <span class="op">=</span> <span class="st">"KBP6045J"</span><span class="op">)</span></code></pre></div>
-<p>Or if the the token is not set as in the above mentioned manner (in the <code>.Renviron</code>), then it can be passed along to the function</p>
+<p>Or if the the token is not set as in the above mentioned manner (in
+the <code>.Renviron</code>), then it can be passed along to the
+function</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/sarb_code.html">sarb_code</a></span><span class="op">(</span>code <span class="op">=</span> <span class="st">"KBP6045J"</span>, token <span class="op">=</span> <span class="st">"f84sdsfsdce65eege7dbacd93ac3dc073e364"</span><span class="op">)</span></code></pre></div>
 </div>
 <div id="looking-up-indicator-codes" class="section level3">
 <h3 class="hasAnchor">
-<a href="#looking-up-indicator-codes" class="anchor"></a>Looking up indicator codes</h3>
-<p>The SARB provides various series with specific codes linked to a series: KBPXXXX. It can be difficult to know which series you are looking.</p>
-<p>To help you find a specific frequency of a series (Monthly, Quarterly, Yearly) or just look in general for a series on say, GDP, we can use the <code>search_indicator</code> function. This function is a convenience wrapper around the <code>indicator_codes</code> dataset</p>
+<a href="#looking-up-indicator-codes" class="anchor" aria-hidden="true"></a>Looking up indicator codes</h3>
+<p>The SARB provides various series with specific codes linked to a
+series: KBPXXXX. It can be difficult to know which series you are
+looking.</p>
+<p>To help you find a specific frequency of a series (Monthly,
+Quarterly, Yearly) or just look in general for a series on say, GDP, we
+can use the <code>search_indicator</code> function. This function is a
+convenience wrapper around the <code>indicator_codes</code> dataset</p>
 <p>Using the description to look for specific series:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/search_indicator.html">search_indicator</a></span><span class="op">(</span>description <span class="op">=</span> <span class="st">"Expenditure"</span><span class="op">)</span>
@@ -210,7 +237,8 @@
 <span class="co">#&gt;   &lt;chr&gt;       &lt;S3: glue&gt;                     &lt;chr&gt;  &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;           &lt;S3: &gt;</span>
 <span class="co">#&gt; 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…</span>
 <span class="co">#&gt; 2 KBP1000     South African Reserve Bank li… M      NA                M1        RMILL           KBP10…</span></code></pre></div>
-<p>You can also look up a specific series if you know the exact code:</p>
+<p>You can also look up a specific series if you know the exact
+code:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/search_indicator.html">search_indicator</a></span><span class="op">(</span>code <span class="op">=</span> <span class="st">"KBP1000J"</span><span class="op">)</span>
 
@@ -218,7 +246,8 @@
 <span class="co">#&gt;   time_series description_and_version        series version_descript… frequency unit_of_measure code  </span>
 <span class="co">#&gt;   &lt;chr&gt;       &lt;S3: glue&gt;                     &lt;chr&gt;  &lt;chr&gt;             &lt;chr&gt;     &lt;chr&gt;           &lt;S3: &gt;</span>
 <span class="co">#&gt; 1 KBP1000     South African Reserve Bank li… J      NA                J1        RMILL           KBP10…</span></code></pre></div>
-<p>The package also includes data that helps you understand the frequency column used in the <code>indicator_codes</code> dataset</p>
+<p>The package also includes data that helps you understand the
+frequency column used in the <code>indicator_codes</code> dataset</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">sarbR</span><span class="fu">::</span><span class="va"><a href="reference/frequency_description.html">frequency_description</a></span>
 
@@ -233,9 +262,10 @@
 </div>
 <div id="dataset-requests" class="section level2">
 <h2 class="hasAnchor">
-<a href="#dataset-requests" class="anchor"></a>Dataset requests</h2>
-<p>If you want to make a specific dataset available through the package, a request can be made through the issues page:</p>
-<p><a href="https://github.com/HanjoStudy/sarbR/issues" class="uri">https://github.com/HanjoStudy/sarbR/issues</a></p>
+<a href="#dataset-requests" class="anchor" aria-hidden="true"></a>Dataset requests</h2>
+<p>If you want to make a specific dataset available through the package,
+a request can be made through the issues page:</p>
+<p><a href="https://github.com/Stellenbosch-Econometrics/sarbR/issues" class="external-link uri">https://github.com/Stellenbosch-Econometrics/sarbR/issues</a></p>
 </div>
 </div>
 
@@ -243,49 +273,54 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Browse source code at <br><a href="https://github.com/HanjoStudy/sarbR/">https://​github.com/​HanjoStudy/​sarbR/​</a>
+<li>Browse source code at <br><a href="https://github.com/Stellenbosch-Econometrics/sarbR/">https://​github.com/​Stellenbosch-Econometrics/​sarbR/​</a>
 </li>
-<li>Report a bug at <br><a href="https://github.com/HanjoStudy/sarbR/issues">https://​github.com/​HanjoStudy/​sarbR/​issues</a>
+<li>Report a bug at <br><a href="https://github.com/Stellenbosch-Econometrics/sarbR/issues">https://​github.com/​Stellenbosch-Econometrics/​sarbR/​issues</a>
 </li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>
-<a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
 <li>Hanjo Odendaal <br><small class="roles"> Maintainer </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
-<li><a href="https://github.com/HanjoStudy/sarbR/commits/master"><img src="https://img.shields.io/github/last-commit/HanjoStudy/sarbR.svg"></a></li>
-<li><a href="https://cran.r-project.org/package=sarbR"><img src="https://www.r-pkg.org/badges/version/sarbR" alt="CRAN Status"></a></li>
-<li><a href="https://codecov.io/github/HanjoStudy/sarbR?branch=master"><img src="https://img.shields.io/codecov/c/github/HanjoStudy/sarbR/master.svg" alt="Coverage Status"></a></li>
-<li><a href="https://github.com/HanjoStudy/sarbR"><img src="https://img.shields.io/badge/devel%20version-0.1.1-blue.svg"></a></li>
+<li><a href="https://www.tidyverse.org/lifecycle/#experimental" class="external-link"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg"></a></li>
+<li><a href="https://github.com/Stellenbosch-Econometrics/sarbR/commits/master" class="external-link"><img src="https://img.shields.io/github/last-commit/Stellenbosch-Econometrics/sarbR.svg"></a></li>
+<li><a href="https://cran.r-project.org/package=sarbR" class="external-link"><img src="https://www.r-pkg.org/badges/version/sarbR" alt="CRAN Status"></a></li>
+<li><a href="https://codecov.io/github/Stellenbosch-Econometrics/sarbR?branch=master" class="external-link"><img src="https://img.shields.io/codecov/c/github/Stellenbosch-Econometrics/sarbR/master.svg" alt="Coverage Status"></a></li>
+<li><a href="https://github.com/Stellenbosch-Econometrics/sarbR" class="external-link"><img src="https://img.shields.io/badge/devel%20version-0.1.1-blue.svg"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Hanjo Odendaal.</p>
+  <p></p>
+<p>Developed by Hanjo Odendaal.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -293,6 +328,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,33 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/index.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/404.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/all_codes.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/frequency_description.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/indicator_codes.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/authors.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/pipe.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/pipe_or.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/news/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/release_info.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/all_codes.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/sarb_code.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/frequency_description.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/search_indicator.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://github.com/HanjoStudy/sarbR/tree/develop/reference/token_request.html</loc>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/indicator_codes.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/pipe_or.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/release_info.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/sarb_code.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/search_indicator.html</loc>
+  </url>
+  <url>
+    <loc>https://github.com/Stellenbosch-Econometrics/sarbR/tree/develop/reference/token_request.html</loc>
   </url>
 </urlset>

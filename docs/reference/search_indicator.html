@@ -52,6 +52,8 @@
 
 
 
+
+
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -63,9 +65,15 @@
 
 
 
+  
+
+  
+
   </head>
 
   <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -79,19 +87,13 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">sarbR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -100,7 +102,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/HanjoStudy/sarbR/">
+  <a href="https://github.com/Stellenbosch-Econometrics/sarbR/">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -119,7 +121,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Seach Indicator</h1>
-    <small class="dont-index">Source: <a href='https://github.com/HanjoStudy/sarbR/blob/master/R/search_indicator.R'><code>R/search_indicator.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/Stellenbosch-Econometrics/sarbR/blob/master/R/search_indicator.R'><code>R/search_indicator.R</code></a></small>
     <div class="hidden name"><code>search_indicator.Rd</code></div>
     </div>
 
@@ -127,7 +129,7 @@
     <p>A function that searches all available indicators based on description input or code. If both are given then parameter code will take preference</p>
     </div>
 
-    <pre class="usage"><span class='fu'>search_indicator</span><span class='op'>(</span><span class='va'>description</span>, <span class='va'>time_series</span>, code <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>search_indicator</span><span class='op'>(</span><span class='va'>description</span>, <span class='va'>time_series</span>, code <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -151,33 +153,39 @@
     <p>data.frame</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-<span class='fu'>search_indicator</span><span class='op'>(</span>description <span class='op'>=</span> <span class='st'>"GDP"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 101 x 7</span>
-#&gt;    time_series description_and_version         series version_descrip… frequency
-#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>                          <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>    
-#&gt; <span style='color: #BCBCBC;'> 1</span> KBP4116     Total loan debt of national go… F      <span style='color: #BB0000;'>NA</span>               J2       
-#&gt; <span style='color: #BCBCBC;'> 2</span> KBP4116     Total loan debt of national go… J      <span style='color: #BB0000;'>NA</span>               J1       
-#&gt; <span style='color: #BCBCBC;'> 3</span> KBP4116     Total loan debt of national go… K      <span style='color: #BB0000;'>NA</span>               K1       
-#&gt; <span style='color: #BCBCBC;'> 4</span> KBP4117     Total loan debt of national go… F      <span style='color: #BB0000;'>NA</span>               J2       
-#&gt; <span style='color: #BCBCBC;'> 5</span> KBP4117     Total loan debt of national go… J      <span style='color: #BB0000;'>NA</span>               J1       
-#&gt; <span style='color: #BCBCBC;'> 6</span> KBP4117     Total loan debt of national go… K      <span style='color: #BB0000;'>NA</span>               K1       
-#&gt; <span style='color: #BCBCBC;'> 7</span> KBP4419     Primary balance as percentage … F      <span style='color: #BB0000;'>NA</span>               J2       
-#&gt; <span style='color: #BCBCBC;'> 8</span> KBP4419     Primary balance as percentage … J      <span style='color: #BB0000;'>NA</span>               J1       
-#&gt; <span style='color: #BCBCBC;'> 9</span> KBP4419     Primary balance as percentage … K      <span style='color: #BB0000;'>NA</span>               K1       
-#&gt; <span style='color: #BCBCBC;'>10</span> KBP4420     National government deficit / … F      <span style='color: #BB0000;'>NA</span>               J2       
-#&gt; <span style='color: #949494;'># … with 91 more rows, and 2 more variables: unit_of_measure &lt;chr&gt;, code &lt;glue&gt;</span></div><div class='input'><span class='fu'>search_indicator</span><span class='op'>(</span>time_series <span class='op'>=</span> <span class='st'>"KBP1000"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 2 x 7</span>
-#&gt;   time_series description_and… series version_descrip… frequency unit_of_measure
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          
-#&gt; <span style='color: #BCBCBC;'>1</span> KBP1000     South African R… J      <span style='color: #BB0000;'>NA</span>               J1        RMILL          
-#&gt; <span style='color: #BCBCBC;'>2</span> KBP1000     South African R… M      <span style='color: #BB0000;'>NA</span>               M1        RMILL          
-#&gt; <span style='color: #949494;'># … with 1 more variable: code &lt;glue&gt;</span></div><div class='input'><span class='fu'>search_indicator</span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"KBP1000J"</span><span class='op'>)</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1 x 7</span>
-#&gt;   time_series description_and… series version_descrip… frequency unit_of_measure
-#&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>            <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>          
-#&gt; <span style='color: #BCBCBC;'>1</span> KBP1000     South African R… J      <span style='color: #BB0000;'>NA</span>               J1        RMILL          
-#&gt; <span style='color: #949494;'># … with 1 more variable: code &lt;glue&gt;</span></div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'></span>
+<span class='r-in'><span class='fu'>search_indicator</span><span class='op'>(</span>description <span class='op'>=</span> <span class='st'>"GDP"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 101 × 7</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    time_series description_and_version      series versi…¹ frequ…² unit_…³ code </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>                       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;glu&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> KBP4116     Total loan debt of national… F      <span style='color: #BB0000;'>NA</span>      J2      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> KBP4116     Total loan debt of national… J      <span style='color: #BB0000;'>NA</span>      J1      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> KBP4116     Total loan debt of national… K      <span style='color: #BB0000;'>NA</span>      K1      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> KBP4117     Total loan debt of national… F      <span style='color: #BB0000;'>NA</span>      J2      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> KBP4117     Total loan debt of national… J      <span style='color: #BB0000;'>NA</span>      J1      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> KBP4117     Total loan debt of national… K      <span style='color: #BB0000;'>NA</span>      K1      RMILL   KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> KBP4419     Primary balance as percenta… F      <span style='color: #BB0000;'>NA</span>      J2      PERC    KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> KBP4419     Primary balance as percenta… J      <span style='color: #BB0000;'>NA</span>      J1      PERC    KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> KBP4419     Primary balance as percenta… K      <span style='color: #BB0000;'>NA</span>      K1      PERC    KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> KBP4420     National government deficit… F      <span style='color: #BB0000;'>NA</span>      J2      PERC    KBP4…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 91 more rows, and abbreviated variable names ¹​version_description,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   ²​frequency, ³​unit_of_measure</span></span>
+<span class='r-in'><span class='fu'>search_indicator</span><span class='op'>(</span>time_series <span class='op'>=</span> <span class='st'>"KBP1000"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 2 × 7</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   time_series description_and_version       series versi…¹ frequ…² unit_…³ code </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>                        <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;glu&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> KBP1000     South African Reserve Bank l… J      <span style='color: #BB0000;'>NA</span>      J1      RMILL   KBP1…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>2</span> KBP1000     South African Reserve Bank l… M      <span style='color: #BB0000;'>NA</span>      M1      RMILL   KBP1…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with abbreviated variable names ¹​version_description, ²​frequency,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   ³​unit_of_measure</span></span>
+<span class='r-in'><span class='fu'>search_indicator</span><span class='op'>(</span>code <span class='op'>=</span> <span class='st'>"KBP1000J"</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 1 × 7</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   time_series description_and_version       series versi…¹ frequ…² unit_…³ code </span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;glue&gt;</span>                        <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;glu&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>1</span> KBP1000     South African Reserve Bank l… J      <span style='color: #BB0000;'>NA</span>      J1      RMILL   KBP1…</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with abbreviated variable names ¹​version_description, ²​frequency,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   ³​unit_of_measure</span></span>
+</code></pre></div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -189,11 +197,11 @@
 
       <footer>
       <div class="copyright">
-  <p>Developed by Hanjo Odendaal.</p>
+  <p><p>Developed by Hanjo Odendaal.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a>1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -201,6 +209,8 @@
 
   
 
+
+  
 
   </body>
 </html>
