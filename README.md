@@ -1,7 +1,7 @@
 
 # sarbR <img src="logo.png" align="right" alt="" width="120" />
 
-[![](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![](https://img.shields.io/github/last-commit/Stellenbosch-Econometrics/sarbR.svg)](https://github.com/Stellenbosch-Econometrics/sarbR/commits/master)
 [![CRAN Status](https://www.r-pkg.org/badges/version/sarbR)](https://cran.r-project.org/package=sarbR)
 [![Coverage Status](https://img.shields.io/codecov/c/github/Stellenbosch-Econometrics/sarbR/master.svg)](https://codecov.io/github/Stellenbosch-Econometrics/sarbR?branch=master)
