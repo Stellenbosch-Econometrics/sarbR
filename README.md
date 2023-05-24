@@ -13,11 +13,6 @@ At the time of the publication of this package (April 2019), the SARB still has 
 
 *Please be aware:* the data is updated in an automated fashion as soon as a new release is published on the SARB's website.
 
-## Change on 2021-10-02
-
-* Version: 0.1.2
-* [BREAKING CHANGE] - change route of API, removed basic auth. Please reinstall package.
-
 ## Disclaimer
 
 * This package is in no way endorsed or associated with the South African Reserve Bank (SARB).
@@ -37,7 +32,7 @@ To install the package
 ```r
 # Install development version from GitHub
 
-devtools::install_github("HanjoStudy/sarbR")
+remotes::install_github("Stellenbosch-Econometrics/sarbR")
 library(sarbR)
 ```
 
@@ -178,4 +173,4 @@ sarbR::frequency_description
 
 If you want to make a specific dataset available through the package, a request can be made through the issues page:
 
-https://github.com/HanjoStudy/sarbR/issues
+https://github.com/Stellenbosch-Econometrics/sarbR/issues
