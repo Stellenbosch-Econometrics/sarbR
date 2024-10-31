@@ -1,3 +1,4 @@
+⚠️ [2024-11-01] DEPRECATED IN FAVOUR OF [berdata](https://github.com/Bureau-for-Economic-Research/berdata) 
 
 # sarbR <img src="logo.png" align="right" alt="" width="120" />
 
